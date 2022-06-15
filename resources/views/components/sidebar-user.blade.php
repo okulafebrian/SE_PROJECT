@@ -1,48 +1,28 @@
 <nav class="navbar d-flex flex-column flex-shrink-0 p-3 bg-light" id="sidebar">
     <a class="navbar-brand" href="#">
-        <img src="images/Meal2Go.png" alt="" width="40" class="d-inline-block align-text-bottom me-2">
+        <img src="/images/Meal2Go.png" alt="Meal2Go" width="40" class="d-inline-block align-text-bottom me-2">
         Meal<span style="color: #E87A00">2</span>Go
     </a>
     <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
+    <ul class="nav flex-column mb-auto me-auto">
+        <li class="mb-2">
             <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#home" />
-                </svg>
-                Home
+                <i class="bi bi-grid-1x2-fill me-3"></i> Dashboard
             </a>
         </li>
-        <li>
+        <li class="mb-2">
             <a href="#" class="nav-link link-dark">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#speedometer2" />
-                </svg>
-                Dashboard
+                <i class="bi bi-search me-3"></i> Browse Recipes
             </a>
         </li>
-        <li>
+        <li class="mb-2">
             <a href="#" class="nav-link link-dark">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#table" />
-                </svg>
-                Orders
+                <i class="bi bi-journal-bookmark-fill me-3"></i> My Recipes
             </a>
         </li>
-        <li>
+        <li class="mb-2">
             <a href="#" class="nav-link link-dark">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#grid" />
-                </svg>
-                Products
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                <svg class="bi pe-none me-2" width="16" height="16">
-                    <use xlink:href="#people-circle" />
-                </svg>
-                Customers
+                <i class="bi bi-calendar-week-fill me-3"></i> Meal Planner
             </a>
         </li>
     </ul>

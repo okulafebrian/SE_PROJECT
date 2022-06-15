@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-lg py-3">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="images/Meal2Go.png" alt="" width="40" class="d-inline-block align-text-bottom me-2">
+            <img src="/images/Meal2Go.png" alt="" width="40" class="d-inline-block align-text-bottom me-2">
             Meal<span style="color: #E87A00">2</span>Go
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
