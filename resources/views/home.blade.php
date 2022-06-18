@@ -2,71 +2,75 @@
     <x-header></x-header>
     <header class="py-5">
         <div class="container d-grid gap-4">
-            <div class="row m-0 d-flex align-items-center justify-content-between">
+            <div class="row mx-2 d-flex align-items-center justify-content-between">
                 <div class="col-5 header-image">
                     <img src="/images/Recipe.jpg" 
-                        class="rounded img-fluid" alt="Recipe">
+                        class="rounded img-fluid shadow" alt="Recipe">
                 </div>
                 <div class="col-6 header-description">
-                    <h1>A Personalized Recipe Recommendations Platform</h1>
+                    <h1 class="fw-bold">A Personalized Recipe Recommendations Platform</h1>
                     <br>
                     <p>We let the people do the ‘talking’ to make the best recipes sources out there.</p>
                 </div>
             </div>
-            <div class="row m-0 d-flex align-items-center justify-content-between">
+            <div class="row mx-2 d-flex align-items-center justify-content-between">
                 <div class="col-6 header-description">
-                    <h1>Discover Various Recipes From Simplest to Complex</h1>
+                    <h1 class="fw-bold">Discover Various Recipes From Simplest to Complex</h1>
                     <br>
                     <p>We provided various recipe with the highest quality and affordable for everyone.</p>
                 </div>
                 <div class="col-5 header-image">
-                    <img src="/images/Recipe.jpg" class="rounded img-fluid" alt="Recipe">
+                    <img src="/images/home2.jpg" class="rounded img-fluid shadow" alt="Recipe">
                 </div>
             </div>
-            <div class="container my-5">
-                <div class="row d-flex align-items-center justify-content-center mb-3">
-                    <h1 class="text-center">Our Services</h1>
+        </div>
+        <x-recipeSlider></x-recipeSlider>
+        <div class="container mt-5 rounded-3 p-4"
+             style="background-color:#ebd6cc;"
+        >
+        <br>
+            <div class="row mx-2 d-flex align-items-center justify-content-between">
+                <div class="col-5 header-image">
+                    <img src="/images/mealPlanning.jpg" 
+                        class="rounded img-fluid shadow" alt="Recipe">
                 </div>
-                <div class="row row-cols-1 row-cols-md-4 g-4">
-                    <div class="col">
-                        <div class="card d-flex align-items-center justify-content-center p-4 h-100">
-                            <i class="fa-solid fa-thumbs-up fa-5x"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-1 fw-bold">High Quality Recipes</h5>
-                                <p class="card-text text-muted">Recipes are validated from our experts</p>
+                <div class="col-6 header-description">
+                    <h1 class="fw-bold">Try out our meal planner!</h1>
+                    <p>We make an attractive interface for you to organize your meal schedule easily.</p>
+                    <button class="btn btn-primary">Try it now!</button>
+                </div>
+            </div>
+        <br>
+        </div>
+        <div class="container mt-5 mb-3">
+            <div class="row mx-2 d-flex align-items-center justify-content-center mx-5">
+                <h1 class="text-center fw-bold mb-4">Subscription</h1>
+                <div class="card h-100 text-center w-50 pt-3 pb-4 border-0"
+                     style="background-color:#ebd6cc;"
+                >
+                        <h3 class="fw-bold">Member</h3>
+                        <div class="card-body text-center mb-4">
+                            <h3 class="card-title fw-bold mb-4"
+                            >Rp. 25.000 per month</h3>
+                            <div class="h-50 d-flex flex-column align-items-center justify-content-center"
+                            >
+                                <p class="card-text"
+                                >Get access to all recipes</p>
+                                <p class="card-text"
+                                >Share your own recipes</p>
+                                <p class="card-text"
+                                >Bookmark recipes</p>
+                                <p class="card-text"
+                                >Meal planner</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card d-flex align-items-center justify-content-center p-4 h-100">
-                            <i class="fa-solid fa-utensils fa-5x"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-1 fw-bold">Meal Planner</h5>
-                                <p class="card-text text-muted">We provided an interface for organizing your meal schedule</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card d-flex align-items-center justify-content-center p-4 h-100">
-                            <i class="fa-solid fa-utensils fa-5x"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-1 fw-bold">Meal Planner</h5>
-                                <p class="card-text text-muted">We provided an interface for organizing your meal schedule</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card d-flex align-items-center justify-content-center p-4 h-100">
-                            <i class="fa-solid fa-utensils fa-5x"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-1 fw-bold">Meal Planner</h5>
-                                <p class="card-text text-muted">We provided an interface for organizing your meal schedule</p>
-                            </div>
+                        <div class="w-100 d-flex justify-content-center align-items-center">
+                            <button class="btn w-50 btn-primary"
+                            >Subscribe now!</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </header>
     <x-footer></x-footer>

@@ -8,21 +8,18 @@
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-        background-size: cover;
-      "
-    >
+        background-size: cover;"
+     >
       <div class="mask" style="
-        background-color: rgba(0, 0, 0, 0.25);
-        height: 100%;
-        ">
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;"
+       >
         <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <h1 class="mb-3">Title</h1>
-            <h4 class="mb-5">Subheading</h4>
+          <div class="text-white mx-1">
+            <h1 class="mb-5 w-auto fw-bold">Easily get healthy and simple recipes with us!</h1>
             <a class="btn btn-primary w-100 py-2" href="#!" role="button" 
             style="max-width: 300px;""
-            >Get started</a
-            >
+            >Get started</a>
           </div>
         </div>
       </div>
