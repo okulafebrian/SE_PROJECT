@@ -8,7 +8,7 @@
 
     @foreach ($recipes as $recipe)
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{ asset('/storage/images/foto/' . $recipe->image) }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text"> {{ $recipe->description }} </p>
             </div>

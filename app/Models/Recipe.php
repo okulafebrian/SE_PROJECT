@@ -13,6 +13,4 @@ class Recipe extends Model
     protected $timestamp = true;
     protected $guarded = []; 
 
-
-
 }

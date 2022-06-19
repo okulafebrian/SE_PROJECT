@@ -6,17 +6,17 @@
     <hr>
     <ul class="nav flex-column mb-auto me-auto">
         <li class="mb-2">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="dashboard" class="nav-link active" aria-current="page">
                 <i class="bi bi-grid-1x2-fill me-3"></i> Dashboard
             </a>
         </li>
         <li class="mb-2">
-            <a href="#" class="nav-link link-dark">
+            <a href="{{ route('recipes.index') }}" class="nav-link link-dark">
                 <i class="bi bi-search me-3"></i> Browse Recipes
             </a>
         </li>
         <li class="mb-2">
-            <a href="#" class="nav-link link-dark">
+            <a href="{{ route('my-recipes.index') }}" class="nav-link link-dark">
                 <i class="bi bi-journal-bookmark-fill me-3"></i> My Recipes
             </a>
         </li>

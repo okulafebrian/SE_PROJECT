@@ -1,4 +1,4 @@
-<x-user title="Create">
+<x-user title="My Recipes">
 
     <div class="d-flex justify-content-between">
         <div class="header">
