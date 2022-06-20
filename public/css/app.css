@@ -11298,10 +11298,19 @@ textarea.form-control-lg {
   background-color: #FFF5F0;
 }
 
-header {
-  height: 95vh;
-  background-image: url("/public/images/background.jpg");
+.header-home {
+  height: 75vh;
+  background-image: url("/images/background.jpg");
   background-size: cover;
+}
+
+.overlay-background {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: inherit;
+}
+
+main {
+  padding-top: 10rem;
 }
 
 @font-face {

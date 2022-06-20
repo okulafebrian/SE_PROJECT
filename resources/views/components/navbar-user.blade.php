@@ -2,7 +2,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 </style>
 
-<nav class="navbar navbar-expand-lg py-3">
+<nav class="navbar navbar-expand-lg shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="/images/Meal2Go.png" alt="" width="40" class="d-inline-block align-text-bottom me-2">

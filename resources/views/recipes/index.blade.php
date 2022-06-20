@@ -1,5 +1,4 @@
 <x-layout title="Recipe">
-
     <div class="container">
         <h2 class="text-center my-5">Explore Indonesian Cuisine</h2>
 
