@@ -1,3 +1,3 @@
 <x-user title="Dashboard">
-    DASHBOARD
+    DASHBOARD {{ Auth::user()->name }}
 </x-user>

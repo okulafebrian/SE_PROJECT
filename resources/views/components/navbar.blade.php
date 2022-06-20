@@ -2,7 +2,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 </style>
 
-<nav class="navbar navbar-expand-lg py-3">
+<nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
 
