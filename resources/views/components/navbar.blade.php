@@ -3,7 +3,7 @@
 
 </style>
 
-<nav class="navbar navbar-expand-lg py-3">
+<nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="/images/Meal2Go.png" alt="" width="40" class="d-inline-block align-text-bottom me-2">
@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#">Meal Planner</a>
                 </li>
                 <li class="nav-item pe-3">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="login">Login</a>
                 </li>
                 <li class="nav-item">
                     <button type="button" class="btn btn-primary" href="#">Subscribe</button>
