@@ -5,22 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Recipe extends Model
+class Author extends Model
 {
     use HasFactory;
-    protected $table = 'recipes';
+    protected $table = 'members';
     protected $primaryKey = 'id';
     protected $timestamp = true;
-    protected $guarded = []; 
+    protected $guarded = [];
 
     public function member()
     {
         return $this->belongsTo(Member::class);
     }
-
-    public function rating()
-    {
-        return $this->hasOne(Rating::class);
-    }
-
 }

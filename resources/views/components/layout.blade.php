@@ -19,6 +19,14 @@
 <body>
     <div id="app">
 
+        @if (!Auth::guest())
+            <x-navbar-user></x-navbar-user>
+        @else
+            <x-navbar></x-navbar>
+        @endif
+
+        {{-- <x-navbar></x-navbar> --}}
+
         <main>
             {{ $slot }}
         </main>
@@ -26,7 +34,8 @@
     </div>
 </body>
 
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </html>

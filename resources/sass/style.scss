@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
 
-
 * {
     font-family: 'Inter', sans-serif;
     color: #001F3D;
@@ -12,11 +11,13 @@
     color: #001F3D;
 }
 
-.navbar, header, footer {
+.navbar, footer {
     background-color: #FFF5F0;
 }
 
-#sidebar {
-    width: 230px;
-    height: 100vh;
+header {
+    height: 95vh;
+    background-image: url('/public/images/background.jpg');
+    background-size: cover;
+    
 }

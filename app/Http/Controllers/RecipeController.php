@@ -15,6 +15,13 @@ class RecipeController extends Controller
         ]);
     }
 
+    public function memberIndex()
+    {
+        return view('recipes.index', [
+            'recipes' => Recipe::all()
+        ]);
+    }
+
     
     public function create()
     {
