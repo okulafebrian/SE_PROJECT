@@ -18,6 +18,11 @@ class Recipe extends Model
         return $this->belongsTo(Member::class);
     }
 
+     public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+    
     public function rating()
     {
         return $this->hasOne(Rating::class);

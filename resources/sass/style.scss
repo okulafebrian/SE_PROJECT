@@ -16,7 +16,7 @@
 }
 
 .header-home {
-    height: 75vh;
+    height: 85vh;
     background-image: url('/images/background.jpg');
     background-size: cover;
 }
@@ -26,6 +26,6 @@
     height: inherit;
 }
 
-main {
-    padding-top: 10rem;
+.description {
+    margin: 8rem 0;
 }

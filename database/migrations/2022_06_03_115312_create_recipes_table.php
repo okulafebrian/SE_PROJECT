@@ -12,9 +12,10 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('author_id');
-            $table->integer('estimated_time');
+            $table->foreignId('user_id');
+            $table->string('author');
             $table->string('difficulty');
+            $table->integer('estimated_time');
             $table->string('estimated_cost');
             $table->text('description');
             $table->text('ingredients');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -15,14 +17,7 @@ class RecipeController extends Controller
         ]);
     }
 
-    public function memberIndex()
-    {
-        return view('recipes.index', [
-            'recipes' => Recipe::all()
-        ]);
-    }
 
-    
     public function create()
     {
         return view('recipes.create');
@@ -33,35 +28,35 @@ class RecipeController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'author' => 'required|string',
             'estimatedTime' => 'required|integer',
             'difficulty' => 'required|string',
             'estimatedCost' => 'required|integer',
             'description' => 'required|string',
             'ingredients' =>'required|string',
             'directions' => 'required|string',
-            'image' => 'required|image|max:1999|mimes:jpg,png,jpeg',
+            'picture' => 'required|image|max:1999|mimes:jpg,png,jpeg',
         ]);
 
-        if ($request->hasFile('image')) {
-            $extension = $request->file('image')->getClientOriginalExtension();
+        if ($request->hasFile('picture')) {
+            $extension = $request->file('picture')->getClientOriginalExtension();
             $file_name = $request->title.'.'.$extension;
-            $path = $request->file('image')->storeAs('public/images/foto', $file_name);
+            $path = $request->file('picture')->storeAs('public/images/recipe', $file_name);
         }
 
          Recipe::create([
             'title'=> $request->title,
-            'author'=> $request->author,
+            'user_id'=> $request->user()->id,
+            'author' => $request->user()->name,
             'estimated_time'=> $request->estimatedTime,
             'difficulty' => $request->difficulty,
             'estimated_cost'=> $request->estimatedCost,
             'description' => $request->description,
             'ingredients' => $request->ingredients,
             'directions' => $request->directions,
-            'image' => $file_name
+            'picture' => $file_name
         ]);
 
-        return redirect()->route('recipes.index');
+        return redirect()->route('my-recipes.index');
 
         // return $request;
     }
