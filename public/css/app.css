@@ -11313,6 +11313,12 @@ textarea.form-control-lg {
   margin: 8rem 0;
 }
 
+.recipe-picture {
+  height: 16rem;
+  width: 16rem;
+  background-color: #FFF5F0;
+}
+
 @font-face {
   font-family: "bootstrap-icons";
   src: url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?f2539a501be3a673de05437f73913ca3) format("woff2"), url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?7ff3ca6fa798de3f8ac2251c7ed9c581) format("woff");

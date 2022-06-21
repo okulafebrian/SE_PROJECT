@@ -1,49 +1,25 @@
-<x-user title="Recipe">
+<x-layout title="Recipe">
 
-    <div class="col d-flex justify-content-between">
-        <div>
-            <h5>Back</h5>
-        </div>
-        <div>
-            <h5>Save</h5>
-        </div>
-    </div>
+    <div class="container">
+        <a class="btn btn-primary rounded-circle" href="{{ route('recipes.index') }}" role="button">
+            <i class="bi bi-arrow-left text-light"></i>
+        </a>
+        <hr>
+        <section>
+            <img src="{{ asset('storage/recipe-images/' . $recipe->picture) }}" alt="{{ $recipe->title }}">
+            <div class="details">
+                <h5 class="card-title fw-bold m-0">{{ $recipe->title }}</h5>
+                <p class="card-text">By {{ $recipe->author }}</p>
 
-    <hr>
+                <div class="row mb-3">
+                    <p><b>Estimated time</b> : 35 mins</p>
+                    <p><b>Difficulty</b> : Easy</p>
+                    <p><b>Estimated Cost</b> : Rp. 50.000~</p>
+                    <p><b>Category</b> : Healthy</p>
 
-    <div class="row">
-        <div class="col">
-            <img src="" alt="">
-        </div>
-        <div class="col">
-            <h2>Easy Butter Chicken</h2>
-            <p>by LOL</p>
-            <div class="row">
-                <p>stars</p>
+                </div>
             </div>
-            <p>Estimated time: 35 mins</p>
-            <p>Difficulty: Easy</p>
-            <p>Estimated Cost: Rp. 50.000~</p>
-            <p>Food: Healthy</p>
-
-        </div>
+        </section>
     </div>
 
-    <div class="row">
-        <h2>Description</h2>
-        <hr>
-        <p>dgjdjkghajkfgjkajk</p>
-    </div>
-
-    <div class="row">
-        <h2>Description</h2>
-        <hr>
-        <p>dgjdjkghajkfgjkajk</p>
-    </div>
-
-    <div class="row">
-        <h2>Methods</h2>
-        <hr>
-        <p>dgjdjkghajkfgjkajk</p>
-    </div>
-</x-user>
+</x-layout>

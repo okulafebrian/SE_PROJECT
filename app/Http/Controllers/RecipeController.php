@@ -40,7 +40,7 @@ class RecipeController extends Controller
         if ($request->hasFile('picture')) {
             $extension = $request->file('picture')->getClientOriginalExtension();
             $file_name = $request->title.'.'.$extension;
-            $path = $request->file('picture')->storeAs('public/images/recipe', $file_name);
+            $path = $request->file('picture')->storeAs('public/recipe-images', $file_name);
         }
 
          Recipe::create([
