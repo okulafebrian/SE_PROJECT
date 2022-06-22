@@ -9,16 +9,16 @@ return new class extends Migration
    
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('member_recipes', function (Blueprint $table) {
             $table->id();
-            $table->integer('recipe_id');
-            $table->string('category_name');
+            $table->foreignId('user_id');
+            $table->foreignId('recipe_id');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('member_recipes');
     }
 };

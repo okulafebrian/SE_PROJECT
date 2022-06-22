@@ -12,20 +12,10 @@ class Recipe extends Model
     protected $primaryKey = 'id';
     protected $timestamp = true;
     protected $guarded = []; 
-
-    public function member()
-    {
-        return $this->belongsTo(Member::class);
-    }
-
-     public function categories()
-    {
-        return $this->hasMany(Category::class);
-    }
     
-    public function rating()
+    public function users()
     {
-        return $this->hasOne(Rating::class);
+        return $this->belongsTo(User::class);
     }
 
 }

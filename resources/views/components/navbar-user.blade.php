@@ -30,7 +30,7 @@
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('my-recipes.index') }}">My Recipes</a></li>
-                        <li><a class="dropdown-item" href="#">Subscription</a></li>
+                        <li><a class="dropdown-item" href="{{ route('subscriptions.index') }}">Subscription</a></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

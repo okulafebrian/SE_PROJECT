@@ -1,10 +1,10 @@
-<x-layout title="Recipe">
+<x-layout title="Create Recipe">
 
     <div class="container my-5">
         <div class="title-header d-flex justify-content-between">
             <h4>Create Recipe</h4>
-            <a class="btn btn-primary rounded-circle" href="{{ route('recipes.index') }}" role="button">
-                <i class="bi bi-arrow-left text-light"></i>
+            <a class="btn btn-light shadow rounded-circle" href="{{ url('my-recipes') }}" role="button">
+                <i class="bi bi-arrow-left"></i>
             </a>
         </div>
 
@@ -26,19 +26,19 @@
                         <label for="difficulty" class="col-sm-2 col-form-label">Difficulty</label>
                         <div class="col-sm-10">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="difficulty" id="easy"
-                                    value="easy">
-                                <label class="form-check-label" for="easy">Easy</label>
+                                <input class="form-check-input" type="radio" name="difficulty" id="Easy"
+                                    value="Easy">
+                                <label class="form-check-label" for="Easy">Easy</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="difficulty" id="moderate"
-                                    value="moderate">
-                                <label class="form-check-label" for="moderate">Moderate</label>
+                                <input class="form-check-input" type="radio" name="difficulty" id="Moderate"
+                                    value="Moderate">
+                                <label class="form-check-label" for="Moderate">Moderate</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="difficulty" id="difficult"
-                                    value="difficult">
-                                <label class="form-check-label" for="difficult">Difficult</label>
+                                <input class="form-check-input" type="radio" name="difficulty" id="Difficult"
+                                    value="Difficult">
+                                <label class="form-check-label" for="Difficult">Difficult</label>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <input type="text" class="form-control" id="estimatedTime" name="estimatedTime">
-                                <span class="input-group-text">MINS</span>
+                                <span class="input-group-text">Minute(s)</span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     <div class="row mb-3">
                         <label for="ingredients" class="col-sm-2 col-form-label">Ingredients</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="ingredients" name="ingredients" rows="6"></textarea>
+                            <textarea class="form-control" id="editor" name="ingredients" rows="6"></textarea>
                         </div>
                     </div>
 
@@ -117,5 +117,4 @@
             </div>
         </div>
     </div>
-
 </x-layout>

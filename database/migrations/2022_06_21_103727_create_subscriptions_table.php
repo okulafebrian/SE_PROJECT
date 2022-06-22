@@ -9,16 +9,18 @@ return new class extends Migration
     
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->integer('author_id');
-            $table->string('name');
+            $table->foreignId('user_id');
+            $table->dateTime('payment_date');
+            $table->dateTime('end_date');
+            $table->string('status');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('subscriptions');
     }
 };
