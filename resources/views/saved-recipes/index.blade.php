@@ -1,57 +1,53 @@
-<x-layout title="Browse Recipe">
-    @if (session('alert'))
-        <div class="alert alert-danger px-5">
-            {{ session('alert') }}
-            <a class="btn btn-danger" href="{{ route('subscriptions.index') }}" role="button">Subscribe here</a>
-        </div>
-    @endif
+<x-layout title="My Recipe">
+
     <div class="container my-5">
-        <h2 class="text-center fw-bold">Explore Indonesian Cuisine</h2>
-
-        <div class="my-4">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-
-        @auth
-            <section class="my-5">
-                <h4>Recommended Recipes</h4>
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4">Saved Recipes</h3>
+            @if ($exist)
                 <div class="row">
-                    @foreach ($recommends as $recommend)
+                    @foreach ($savedRecipes as $savedRecipe)
                         <a role="button" class="btn btn-light shadow m-2 p-0" style="width: 16rem; height:22rem"
-                            href="{{ route('recipes.show', $recommend->id) }}">
+                            href="{{ route('recipes.show', $savedRecipe->recipe->id) }}">
 
                             <div class="card-body text-start">
-                                <img src="{{ asset('storage/recipe-images/' . $recommend->picture) }}"
-                                    alt="{{ $recommend->title }}" class="card-img-top mb-3">
-                                <h5 class="card-title fw-bold mb-1">{{ $recommend->title }}</h5>
-                                <p class="caption">By {{ $recommend->author }}</p>
+                                <img src="{{ asset('storage/recipe-images/' . $savedRecipe->recipe->picture) }}"
+                                    alt="{{ $savedRecipe->recipe->title }}" class="card-img-top mb-3">
 
+                                <h5 class="card-title fw-bold mb-1">{{ $savedRecipe->recipe->title }}</h5>
+                                <p class="caption">By {{ $savedRecipe->recipe->author }}</p>
                                 <div class="category mb-3">
-                                    @if ($recommend->cat_1 == '1')
+                                    @if ($savedRecipe->recipe->cat_1 == '1')
                                         <span class="badge bg-primary">Simple</span>
                                     @endif
 
-                                    @if ($recommend->cat_2 == '1')
+                                    @if ($savedRecipe->recipe->cat_2 == '1')
                                         <span class="badge bg-warning">Budget</span>
                                     @endif
 
-                                    @if ($recommend->cat_3 == '1')
+                                    @if ($savedRecipe->recipe->cat_3 == '1')
                                         <span class="badge bg-success">Healthy</span>
                                     @endif
                                 </div>
                             </div>
                         </a>
                     @endforeach
-
                 </div>
-            </section>
-        @endauth
+            @else
+                <div class="card shadow border-0">
+                    <div class="card-body text-center py-5">
+                        <h4>No saved recipes yet!</h4>
+                    </div>
+                </div>
+            @endif
+        </section>
 
-        <section class="my-5">
-            <h4>All Recipes</h4>
+        <section class="my-4">
+            <div class="d-flex justify-content-start mb-4">
+                <h3 class="m-0 me-3 fw-bold">My Recipes</h3>
+                <a role="button" class="btn btn-light shadow rounded-circle" href="{{ route('recipes.create') }}">
+                    <i class="bi bi-plus"></i>
+                </a>
+            </div>
             <div class="row">
                 @foreach ($recipes as $recipe)
                     <a role="button" class="btn btn-light shadow m-2 p-0" style="width: 16rem; height:22rem"
@@ -81,6 +77,5 @@
                 @endforeach
             </div>
         </section>
-
     </div>
 </x-layout>

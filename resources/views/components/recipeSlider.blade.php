@@ -40,8 +40,7 @@
     }
 </style>
 
-<div class="container mt-5">
-    <h1 class="text-center mb-3 fw-bold">Browse your favourite recipe</h1>
+<div class="container m-5">
     <div class="row mx-auto my-auto justify-content-center">
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
@@ -76,14 +75,14 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev w-auto my-auto" href="#recipeCarousel" role ="button"
-                data-bs-slide="prev" style="height: fit-content">
+            <a class="carousel-control-prev w-auto my-auto" href="#recipeCarousel" role="button" data-bs-slide="prev"
+                style="height: fit-content">
                 <div class="bg-primary p-3 rounded-3" aria-hidden="true">
                     <i class="fa fa-angle-left" style="color: #fff;"></i>
                 </div>
             </a>
-            <a class="carousel-control-next w-auto my-auto" href="#recipeCarousel" role ="button"
-                data-bs-slide="next" style="height: fit-content">
+            <a class="carousel-control-next w-auto my-auto" href="#recipeCarousel" role="button" data-bs-slide="next"
+                style="height: fit-content">
                 <div class="bg-primary p-3 rounded-3" aria-hidden="true">
                     <i class="fa fa-angle-right" style="color: #fff;"></i>
                 </div>

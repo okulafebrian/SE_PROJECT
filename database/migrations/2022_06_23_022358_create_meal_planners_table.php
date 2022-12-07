@@ -6,21 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+ 
     public function up()
     {
-        Schema::create('subscriptions', function (Blueprint $table) {
+        Schema::create('meal_planners', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            // $table->dateTime('schedule');
+            $table->string('date');
+            $table->string('time');
+            $table->boolean('status');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->dateTime('payment_date');
-            $table->dateTime('end_date');
-            $table->string('status');
             $table->timestamps();
         });
     }
 
+  
     public function down()
     {
-        Schema::dropIfExists('subscriptions');
+        Schema::dropIfExists('meal_planners');
     }
 };

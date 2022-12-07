@@ -8,6 +8,8 @@
     <link rel="icon" href="images/Meal2Go.png">
     <title>Meal2Go - {{ $title ?? 'Home' }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link id="bsdp-css" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css"
+        rel="stylesheet">
     <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
@@ -25,7 +27,22 @@
         </main>
 
     </div>
-    <script src="dist/bundle.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#directions'))
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#ingredients'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
 </body>
 

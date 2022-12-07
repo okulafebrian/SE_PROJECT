@@ -12,6 +12,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('preference_1');
+            $table->integer('preference_2');
+            $table->integer('preference_3');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

@@ -3,7 +3,9 @@
         <div class="overlay-background d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <h1 class="text-white fw-bold pb-4">Easily get healthy and simple recipes with us!</h1>
-                <a class="btn btn-primary" href="#" role="button">Get started</a>
+                @guest
+                    <a class="btn btn-primary" href="{{ route('register') }}" role="button">Get started</a>
+                @endguest
             </div>
         </div>
     </header>
@@ -16,31 +18,96 @@
                     <img src="/images/Recipe.jpg" class="rounded img-fluid shadow" alt="Recipe">
                 </div>
                 <div class="col-6 description-content">
-                    <h1 class="fw-bold pb-4">A Personalized Recipe Recommendations Platform</h1>
+                    <h1 class="fw-bold pb-4">A Personalized Recipe recipeations Platform</h1>
                     <p>We let the people do the ‘talking’ to make the best recipes sources out there. We provided
                         various recipe with the highest quality and affordable for everyone.</p>
                 </div>
             </div>
 
-            <div class="browse row">
-                <h1 class="fw-bold">Find Your Favourite Recipe</h1>
+            <div class="my-5">
+                <h1 class="fw-bold text-center">Find Your Favourite Recipe</h1>
                 <div class="row">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="container my-5">
+                        <div class="row mx-auto my-auto justify-content-center">
+                            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active">
+                                        <a role="button" class="btn btn-light shadow m-2 p-0"
+                                            style="width: 16rem; height:22rem" href="#">
+
+                                            <div class="card-body text-start">
+                                                <img src="{{ asset('storage/recipe-images/' . $recipeFirst->picture) }}"
+                                                    alt="{{ $recipeFirst->title }}" class="card-img-top mb-3">
+                                                <h5 class="card-title fw-bold mb-1">{{ $recipeFirst->title }}</h5>
+                                                <p class="caption">By {{ $recipeFirst->author }}</p>
+
+                                                <div class="category mb-3">
+                                                    @if ($recipeFirst->cat_1 == '1')
+                                                        <span class="badge bg-primary">Simple</span>
+                                                    @endif
+
+                                                    @if ($recipeFirst->cat_2 == '1')
+                                                        <span class="badge bg-warning">Budget</span>
+                                                    @endif
+
+                                                    @if ($recipeFirst->cat_3 == '1')
+                                                        <span class="badge bg-success">Healthy</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    @foreach ($recipes as $recipe)
+                                        <div class="carousel-item">
+                                            <a role="button" class="btn btn-light shadow m-2 p-0"
+                                                style="width: 16rem; height:22rem"
+                                                href="{{ route('recipes.show', $recipe->id) }}">
+
+                                                <div class="card-body text-start">
+                                                    <img src="{{ asset('storage/recipe-images/' . $recipe->picture) }}"
+                                                        alt="{{ $recipe->title }}" class="card-img-top mb-3">
+                                                    <h5 class="card-title fw-bold mb-1">{{ $recipe->title }}</h5>
+                                                    <p class="caption">By {{ $recipe->author }}</p>
+
+                                                    <div class="category mb-3">
+                                                        @if ($recipe->cat_1 == '1')
+                                                            <span class="badge bg-primary">Simple</span>
+                                                        @endif
+
+                                                        @if ($recipe->cat_2 == '1')
+                                                            <span class="badge bg-warning">Budget</span>
+                                                        @endif
+
+                                                        @if ($recipe->cat_3 == '1')
+                                                            <span class="badge bg-success">Healthy</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <a class="carousel-control-prev w-auto my-auto" href="#recipeCarousel" role="button"
+                                    data-bs-slide="prev" style="height: fit-content">
+                                    <div class="bg-primary p-3 rounded-3">
+                                        <i class="bi bi-caret-left-fill text-light"></i>
+                                    </div>
+                                </a>
+                                <a class="carousel-control-next w-auto my-auto" href="#recipeCarousel" role="button"
+                                    data-bs-slide="next" style="height: fit-content">
+                                    <div class="bg-primary p-3 rounded-3">
+                                        <i class="bi bi-caret-right-fill text-light"></i>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
-        <div class="container mt-5 rounded-3 p-4" style="background-color:#ebd6cc;">
+        <div class="my-5rounded-3 p-4" style="background-color:#ebd6cc;">
             <br>
             <div class="row mx-2 d-flex align-items-center justify-content-between">
                 <div class="col-5 header-image">
@@ -49,12 +116,12 @@
                 <div class="col-6 header-description">
                     <h1 class="fw-bold">Try out our meal planner!</h1>
                     <p>We make an attractive interface for you to organize your meal schedule easily.</p>
-                    <button class="btn btn-primary">Try it now!</button>
+                    <a class="btn btn-primary" href="{{ route('register') }}" role="button">Try it now</a>
                 </div>
             </div>
             <br>
         </div>
-        <div class="container mt-5 mb-3">
+        <div class="container my-5 py-5">
             <div class="row mx-2 d-flex align-items-center justify-content-center mx-5">
                 <h1 class="text-center fw-bold mb-4">Subscription</h1>
                 <div class="card h-100 text-center w-50 pt-3 pb-4 border-0" style="background-color:#ebd6cc;">
@@ -69,10 +136,29 @@
                         </div>
                     </div>
                     <div class="w-100 d-flex justify-content-center align-items-center">
-                        <button class="btn w-50 btn-primary">Subscribe now!</button>
+                        <a class="btn btn-primary" href="{{ route('subscriptions.index') }}" role="button">Subscribe
+                            now</a>
                     </div>
                 </div>
             </div>
         </div>
+        <x-footer></x-footer>
     </main>
+    <script>
+        let items = document.querySelectorAll('.carousel .carousel-item')
+
+        items.forEach((el) => {
+            const minPerSlide = 4
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+    </script>
 </x-layout>

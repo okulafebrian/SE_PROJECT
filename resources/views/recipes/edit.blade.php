@@ -1,14 +1,12 @@
 <x-layout title="Edit Recipe">
-
     <div class="container my-5">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mb-4">
             <h2 class="m-0 fw-bold">Edit Recipe</h2>
-            <a class="btn btn-light shadow rounded-circle" href="{{ url()->previous() }}" role="button">
+            <a class="btn btn-light shadow rounded-circle" href="{{ url('recipes/' . $recipe->id) }}" role="button">
                 <i class="bi bi-arrow-left"></i>
             </a>
         </div>
-        <hr>
-        <form action="{{ route('recipes.update', $recipe->id) }}" method="POST">
+        <form method="POST" action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
             @method('UPDATE')
             @csrf
             <section class="row">
@@ -21,7 +19,7 @@
                         <label for="title" class="col-sm-3 col-form-label fw-bold">Title</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="title" name="title"
-                                placeholder="{{ $recipe->title }}">
+                                value="{{ $recipe->title }}">
                         </div>
                     </div>
 
@@ -29,24 +27,24 @@
                         <legend class="col-form-label col-sm-3 pt-0 fw-bold">Difficulty</legend>
                         <div class="col-sm-9">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                                    value="option1" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                    First radio
+                                <input class="form-check-input" type="radio" name="difficulty" id="Easy"
+                                    value="Easy" @if ($recipe->difficulty == 'Easy') checked @endif>
+                                <label class="form-check-label" for="Easy">
+                                    Easy
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                    value="option2">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Second radio
+                                <input class="form-check-input" type="radio" name="difficulty" id="Moderate"
+                                    value="Moderate" @if ($recipe->difficulty == 'Moderate') checked @endif>
+                                <label class="form-check-label" for="Moderate">
+                                    Moderate
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                    value="option2">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Second radio
+                                <input class="form-check-input" type="radio" name="difficulty" id="Difficult"
+                                    value="Difficult" @if ($recipe->difficulty == 'Difficult') checked @endif>
+                                <label class="form-check-label" for="Difficult">
+                                    Difficult
                                 </label>
                             </div>
                         </div>
@@ -57,7 +55,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="text" class="form-control" id="estimatedTime" name="estimatedTime"
-                                    placeholder="{{ $recipe->estimated_time }}">
+                                    value="{{ $recipe->estimated_time }}">
                                 <span class="input-group-text">Minute(s)</span>
                             </div>
                         </div>
@@ -69,8 +67,17 @@
                             <div class="input-group">
                                 <span class="input-group-text">Rp</span>
                                 <input type="text" class="form-control" id="estimatedCost" name="estimatedCost"
-                                    placeholder="{{ $recipe->estimated_cost }}">
+                                    value="{{ $recipe->estimated_cost }}">
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="picture_old" class="col-sm-3 col-form-label fw-bold">Picture</label>
+                        <input type="text" class="form-control" name="picture_old" value="{{ $recipe->picture }}"
+                            hidden>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" name="picture_new">
                         </div>
                     </div>
                 </div>
@@ -78,23 +85,21 @@
 
             <section class="my-5">
                 <h3 class=fw-bold>Description</h3>
-                <textarea class="form-control" id="directions" name="directions" rows="6"
-                    placeholder="{{ $recipe->description }}"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="6">{!! $recipe->description !!}</textarea>
             </section>
 
             <section class="my-5">
                 <h3 class=fw-bold>Ingredients</h3>
-                <textarea class="form-control" id="directions" name="directions" rows="6"
-                    placeholder="{{ $recipe->ingredients }}"></textarea>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="6">{!! $recipe->ingredients !!}</textarea>
             </section>
 
             <section class="my-5">
                 <h3 class=fw-bold>Directions</h3>
-                <textarea class="form-control" id="directions" name="directions" rows="6"
-                    placeholder="{{ $recipe->directions }}"></textarea>
+                <textarea class="form-control" id="directions" name="directions" rows="6">{!! $recipe->directions !!}</textarea>
             </section>
-            @method('PUT')
+
             <div class="row">
+                @method('PUT')
                 <button type="submit" class="btn btn-primary text-white">Save</button>
             </div>
         </form>

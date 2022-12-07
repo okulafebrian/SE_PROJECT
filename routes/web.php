@@ -1,30 +1,38 @@
 <?php
 
-use App\Http\Controllers\MemberRecipeController;
+use App\Http\Controllers\MealPlannerController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\SavedRecipeController;
 use App\Http\Controllers\SubscriptionController;
+use App\Models\Recipe;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home');
+// Route::view('/', ['recipes' =>  Recipe::all()]);
+// Route::view('/', 'home');
+
+Route::get('/', function () {
+    return view('home', [
+        'recipeFirst' => Recipe::first(),
+        'recipes' => Recipe::all()->skip(1),
+    ]);
+});
+
 Route::view('/dashboard', 'dashboard');
 // Route::view('/test', 'test');
 
 // Recipes
-Route::prefix('recipes')->name('recipes.')->group(function () {
-    // Route::get('/show/{id}', [RecipeController::class, 'show'])->name('show');
-});
 Route::resource('recipes', RecipeController::class);
 
-
 // Member Recipes
-Route::prefix('my-recipes')->name('my-recipes.')->group(function () {
-    // Route::get('/show/{id}', [RecipeController::class, 'show'])->name('show');
-});
-Route::resource('my-recipes', MemberRecipeController::class);
+Route::resource('my-recipes', SavedRecipeController::class)->middleware('auth');
 
+Route::resource('subscriptions', SubscriptionController::class)->middleware('auth');
 
-Route::resource('subscriptions', SubscriptionController::class);
+Route::resource('ratings', RatingController::class)->middleware('auth');
+
+Route::resource('meal-planner', MealPlannerController::class)->middleware('auth');
 
 Auth::routes();
 

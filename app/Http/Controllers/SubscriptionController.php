@@ -12,6 +12,9 @@ class SubscriptionController extends Controller
 
     public function index()
     {  
+
+        // 0: expired | 1: active | 2: cancelled
+
         $exist = false;
         $active = false;
         $id = auth()->user()->id;
@@ -67,7 +70,7 @@ class SubscriptionController extends Controller
     public function update(Request $request, Subscription $subscription)
     {
         $subscription->update([
-            'status'=> 'Cancelled'
+            'status' => 'Cancel'
         ]);
 
         return back();

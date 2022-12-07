@@ -14,6 +14,9 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name',
+        'preference_1',
+        'preference_2',
+        'preference_3',
         'email',
         'password',
     ];
@@ -26,5 +29,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function subscription()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function recipe()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
+
+    public function mealPlanner()
+    {
+        return $this->hasMany(MealPlanner::class);
+    }
 
 }

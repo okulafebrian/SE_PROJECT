@@ -13,7 +13,22 @@ class Recipe extends Model
     protected $timestamp = true;
     protected $guarded = []; 
     
-    public function users()
+    public function savedRecipe()
+    {
+        return $this->hasOne(SavedRecipe::class);
+    }
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
+    public function mealPlanner()
+    {
+        return $this->belongsTo(MealPlanner::class);
+    }
+
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

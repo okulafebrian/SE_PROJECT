@@ -31,9 +31,14 @@ class RegisterController extends Controller
     }
 
     protected function create(array $data)
-    {
+    {   
+        // preference_1: simple | preference_2: budget | preference_3: healthy
+
         return User::create([
             'name' => $data['name'],
+            'preference_1' => empty($data['preference_1']) ? '0' : $data['preference_1'],
+            'preference_2' => empty($data['preference_2']) ? '0' : $data['preference_2'],
+            'preference_3' => empty($data['preference_3']) ? '0' : $data['preference_3'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);

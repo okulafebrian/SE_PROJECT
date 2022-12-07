@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{ route('recipes.index') }}">Browse Recipe</a>
                 </li>
                 <li class="nav-item pe-3">
-                    <a class="nav-link" href="#">Meal Planner</a>
+                    <a class="nav-link" href="{{ route('meal-planner.index') }}">Meal Planner</a>
                 </li>
                 <li class="nav-item dropdown">
 

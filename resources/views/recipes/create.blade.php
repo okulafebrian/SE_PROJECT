@@ -1,8 +1,8 @@
 <x-layout title="Create Recipe">
 
     <div class="container my-5">
-        <div class="title-header d-flex justify-content-between">
-            <h4>Create Recipe</h4>
+        <div class="d-flex justify-content-between">
+            <h2 class="m-0 fw-bold">Create Recipe</h2>
             <a class="btn btn-light shadow rounded-circle" href="{{ url('my-recipes') }}" role="button">
                 <i class="bi bi-arrow-left"></i>
             </a>
@@ -47,15 +47,15 @@
                         <label for="category" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="simple" name="simple">
+                                <input class="form-check-input" type="checkbox" value="1" name="cat_1">
                                 <label class="form-check-label" for="simpleOption">Simple</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="budget" name="budget">
+                                <input class="form-check-input" type="checkbox" value="1" name="cat_2">
                                 <label class="form-check-label" for="budgetOption">Budget</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="healthy" name="healthy">
+                                <input class="form-check-input" type="checkbox" value="1" name="cat_3">
                                 <label class="form-check-label" for="healthyOption">Healthy</label>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                     <div class="row mb-3">
                         <label for="ingredients" class="col-sm-2 col-form-label">Ingredients</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="editor" name="ingredients" rows="6"></textarea>
+                            <textarea class="form-control" id="ingredients" name="ingredients" rows="10"></textarea>
                         </div>
                     </div>
 
